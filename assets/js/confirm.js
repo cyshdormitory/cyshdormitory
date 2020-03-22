@@ -17,3 +17,4 @@ function send(data){
             data: data,
             dataType: "JSON",
         });
+}
