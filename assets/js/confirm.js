@@ -17,8 +17,4 @@ function send(data){
             data: data,
             dataType: "JSON",
         });
-<<<<<<< HEAD
-    }
-=======
 }
->>>>>>> 11bd3a1483350c8c1a40128f8a62935bcb9c43a1
