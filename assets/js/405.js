@@ -2,17 +2,17 @@ var name1;var name2;var name3;var name4;
 
 var freq = [0,0,0,0];
 
-//406
-function person4061(data){
+//405
+function person4051(data){
     if(freq[0]%2 === 0){
-        var change = document.getElementById("person4061");
+        var change = document.getElementById("person4051");
         change.style.backgroundColor = "#6495ed";
         freq[0] += 1;
         
         name1 = data.value;
     }
     else{
-        var change = document.getElementById("person4061");
+        var change = document.getElementById("person4051");
         change.style.backgroundColor = "#f0ffff";
         freq[0] += 1;
         
@@ -20,48 +20,48 @@ function person4061(data){
     }
 }
 
-function person4062(data){
+function person4052(data){
     if(freq[1]%2 === 0){
-        var change = document.getElementById("person4062");
+        var change = document.getElementById("person4052");
         change.style.backgroundColor = "#6495ed";
         freq[1] += 1;
         
         name2 = data.value;
     }
     else{
-        var change = document.getElementById("person4062");
+        var change = document.getElementById("person4052");
         change.style.backgroundColor = "#f0ffff";
         freq[1] += 1;
         
         name2 = "";
     }
 }
-function person4063(data){
+function person4053(data){
     if(freq[2]%2 === 0){
-        var change = document.getElementById("person4063");
+        var change = document.getElementById("person4053");
         change.style.backgroundColor = "#6495ed";
         freq[2] += 1;
         
         name3 = data.value;
     }
     else{
-        var change = document.getElementById("person4063");
+        var change = document.getElementById("person4053");
         change.style.backgroundColor = "#f0ffff";
         freq[2] += 1;
         
         name3 = "";
     }
 }
-function person4064(data){
+function person4054(data){
     if(freq[3]%2 === 0){
-        var change = document.getElementById("person4064");
+        var change = document.getElementById("person4054");
         change.style.backgroundColor = "#6495ed";
         freq[3] += 1;
         
         name4 = data.value;
     }
     else{
-        var change = document.getElementById("person4064");
+        var change = document.getElementById("person4054");
         change.style.backgroundColor = "#f0ffff";
         freq[3] += 1;
         
