@@ -13,8 +13,8 @@ function Confirm(){
         'name1' : name1,
         'name2' : name2,
         'name3' : name3,
-        'name4' : name4,
-    }
+        'name4' : name4
+    };
     send(data);
     location.href = "index.html";
 }
