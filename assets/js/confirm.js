@@ -1,3 +1,13 @@
+
+function send(data){
+        $.ajax({
+            type: "get",
+            url:"https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
+            data: data,
+            dataType: "JSON",
+        });
+}
+
 function Confirm(){
     var data = {
         'name1' : name1,
@@ -7,14 +17,4 @@ function Confirm(){
     }
     send(data);
     location.href = "index.html";
-}
-
-function send(data){
-        $.ajax({
-            type: "get",
-            url:    
-            "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
-            data: data,
-            dataType: "JSON",
-        });
 }
