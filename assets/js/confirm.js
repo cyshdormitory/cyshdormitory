@@ -2,7 +2,7 @@
 function send(data){
         $.ajax({
             type: "get",
-            url:"https://script.google.com/macros/s/AKfycbzV_wdcUCj0EBf5c7Kd2ayyUlM2D23oP31NjzRiiwijQa6gwlg/exec",
+            url:"https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
             data: data,
             dataType: "JSON",
         });
