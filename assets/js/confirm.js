@@ -1,20 +1,16 @@
-
-function send(data){
+function send(name){
         $.ajax({
-            type: "get",
-            url:"https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
-            data: data,
-            dataType: "JSON",
+            url:"record.json",
+            data: {
+                'name': name
+            },
+            type:"POST",
+            dataType: "text",
         });
 }
 
 function Confirm(){
-    var data = {
-        'name1' : name1,
-        'name2' : name2,
-        'name3' : name3,
-        'name4' : name4
-    };
-    send(data);
+    name.join();
+    send(name);
     location.href = "index.html";
 }
