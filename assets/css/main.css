@@ -1103,7 +1103,7 @@ button.person_button, input[type="button"]{
     font-size: 1.3em;
     border-radius: 4px;
     border: solid 1px #c8cccf;
-    color: inherit;
+    background-color: "#f0ffff";
     display: block;
     outline: 0;
     padding: 0 1em;
