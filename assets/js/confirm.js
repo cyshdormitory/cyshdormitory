@@ -6,16 +6,13 @@ function Confirm(){
     Time += 480;
     Time %= 1440;
     
-    var openTime = [(6*60),(18*60+50),(22*60+20)];
-    var closeTime = [(8*60+30),(20*60),(23*60+10)];
+    var openTime = [(18*60+50),(22*60+20)];
+    var closeTime = [(20*60),(23*60+30)];
   
-    if(dd>=1 && dd<=5 && Time>=openTime[0] && Time<=closeTime[0]){
+    if(dd>=1 && dd<=4 && ((Time>=openTime[0] && Time<=closeTime[0])||(Time>=openTime[1] &&  Time<=closeTime[1]))){
         send();
     }
-    else if(dd>=1 && dd<=4 && ((Time>=openTime[1] &&                Time<=closeTime[1])||(Time>=openTime[2] &&  Time<=closeTime[2]))){
-        send();
-    }
-    else if(dd==0 && Time>=openTime[2] && Time<=closeTime[2]){
+    else if(dd==0 && Time>=openTime[1] && Time<=closeTime[1]){
         send();
     }
     else{
