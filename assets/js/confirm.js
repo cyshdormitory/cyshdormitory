@@ -6,7 +6,7 @@ function Confirm(){
     Time += 480;
     Time %= 1440;
     
-    var openTime = [(18*60+45),(22*60+20)];
+    var openTime = [(17*60+20),(22*60+20)];
     var closeTime = [(20*60),(23*60+59)];
   
     if(dd>=1 && dd<=4 && ((Time>=openTime[0] && Time<=closeTime[0])||(Time>=openTime[1] &&  Time<=closeTime[1]))){
