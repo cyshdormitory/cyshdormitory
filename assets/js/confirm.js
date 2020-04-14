@@ -26,22 +26,11 @@ function send(Time){
     var data = {	    
         'name' : Name,
     }
-    Time/=144;
-    if(Time>5){
         $.ajax({
             type: "get",
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
             data: data,
             dataType: "JSON",
          });
-    }
-    else{
-         $.ajax({
-            type: "get",
-            url: "https://script.google.com/macros/s/AKfycbw_KbxlDcGWJBm6VRrea7hLVchSSkYFEgqZi1Fl/exec",
-            data: data,
-            dataType: "JSON",
-         });
-    }
     location.href = "index.html";
 }
