@@ -30,13 +30,5 @@ function send(Time){
                 'name' : Name
             },
         });
-    else{
-         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbyinMzrweJ1EDsVbPdw5mQyJJgeBBDY3O3HCtSroZkFjT2pLkk/exec",
-            data:  {
-                'name' : Name
-            },
-        });
-    }
     location.href="index.html";
 }
