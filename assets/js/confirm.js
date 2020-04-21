@@ -24,14 +24,12 @@ function Confirm(){
 function send(Time){
     var Name = name.join(",");
     Time /= 144;
-    if(Time>5){
         $.ajax({
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
             data:  {
                 'name' : Name
             },
         });
-    }
     else{
          $.ajax({
             url: "https://script.google.com/macros/s/AKfycbyinMzrweJ1EDsVbPdw5mQyJJgeBBDY3O3HCtSroZkFjT2pLkk/exec",
