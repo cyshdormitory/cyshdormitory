@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <!--
 	Identity by HTML5 UP
 	html5up.net | @ajlkn
@@ -20,13 +19,13 @@
 				<!-- Main -->
 					<section id="main">
 						<header>
-							<h1>陽明學苑<br>已量測體溫人員記錄</h1>
+							<h1><strong>陽明學苑</strong><br>已量測體溫人員記錄</h1>
 						</header>
 						<hr />
 						<form method="post" name="check">
 							<div class="fields">
 								<div class="field">
-									<input type="text" name="room" id="name" placeholder="寢室號碼"  onchange="lattice()"/>
+									<input type="text" name="room" id="name" placeholder="請輸入寢室號碼"  onchange="lattice()"/>
 								</div>
                             <!--
 								<div class="field">
@@ -745,8 +744,9 @@
                 </div>
 				<!-- Footer -->
 					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Jane Doe</li><li>Design:HTML5 UP</li>
+						<ul class="copyright">		
+							<li>Design:HTML5 UP</li>
+							<li>modify:Weng-john</li>
 						</ul>
 					</footer>
 
@@ -757,12 +757,11 @@
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { 
                         document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
-					   document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
 
-            <script src="/FileSaver.js"></script>
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/input.js"></script>
             <script src="assets/js/confirm.js"></script>
