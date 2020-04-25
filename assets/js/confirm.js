@@ -37,7 +37,7 @@ function send(Time){
             success: function(respond){
                 if(respond=="成功"){
                     clearTimeout(count);
-                    location.href="index.html";
+                    location.href="https://cyshdormitory.github.io/";
                 }
             }
         });
@@ -53,7 +53,7 @@ function send(Time){
             success: function(respond){
                 if(respond=="成功"){
                     clearTimeout(count);
-                    location.href="index.html";
+                    location.href="https://cyshdormitory.github.io/";
                 }
             }
         });
