@@ -23,7 +23,7 @@ function Confirm(){
 function send(Time){
     var Name = name.join(",");
     Time /= 144;
-    if(Time>5){
+    if(Time<5){
         $.ajax({
             type:'get',
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
