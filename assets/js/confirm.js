@@ -21,12 +21,12 @@ function Confirm(){
 
 function send(Time){
     var count = setTimeout(function(){
-        alert("很抱歉　傳送失敗\n請重傳一次");
+        alert("很抱歉　傳送逾時\n請重傳一次");
     },10000);
     var Name = name.join(",");
     Time %= 10;
     console.log(Time);
-    if(Time<5){
+    if(Time>5){
         $.ajax({
             type:'get',
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
