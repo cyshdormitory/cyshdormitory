@@ -5,7 +5,7 @@ function Confirm(){
     Time /= (1000*60);
     Time += 480;
     Time %= 1440;
-    var openTime = [(18*60+50),(22*60+20)];
+    var openTime = [(18*60+50),(2*60+20)];
     var closeTime = [(20*60),(23*60+30)];
     if(dd>=1 && dd<=4 && ((Time>=openTime[0] && Time<=closeTime[0])||(Time>=openTime[1] &&  Time<=closeTime[1]))){
         send(Time);
@@ -20,9 +20,13 @@ function Confirm(){
 }
 
 function send(Time){
+    var count = setTimeout(function(){
+        alert("很抱歉　傳送失敗\n請重傳一次");
+    },10000);
     var Name = name.join(",");
-    Time /= 144;
-    if(Time>5){
+    Time %= 10;
+    console.log(Time);
+    if(Time<5){
         $.ajax({
             type:'get',
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
@@ -32,10 +36,8 @@ function send(Time){
             datatype:'json',
             success: function(respond){
                 if(respond=="成功"){
+                    clearTimeout(count);
                     location.href="index.html";
-                }
-                else{
-                    alert("很抱歉　傳送失敗\n請重傳一次");
                 }
             }
         });
@@ -50,10 +52,8 @@ function send(Time){
             datatype:'json',
             success: function(respond){
                 if(respond=="成功"){
+                    clearTimeout(count);
                     location.href="index.html";
-                }
-                else{
-                    alert("很抱歉　傳送失敗\n請重傳一次");
                 }
             }
         });
