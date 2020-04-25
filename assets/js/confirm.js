@@ -15,17 +15,21 @@ function Confirm(){
     }
     else{
         alert("請不要亂送資料\n現在不是量體溫的時段");
-        location.href = "index.html";
+        location.href = "https://cyshdormitory.github.io/";
     }
 }
 
 function send(Time){
+    var freq = 0;
     var count = setTimeout(function(){
         alert("很抱歉　傳送逾時\n請重傳一次");
+        freq++;
     },10000);
+    if(freq==3){
+        location.href="https://cyshdormitory.github.io/";
+    }
     var Name = name.join(",");
     Time %= 10;
-    console.log(Time);
     if(Time>5){
         $.ajax({
             type:'get',
