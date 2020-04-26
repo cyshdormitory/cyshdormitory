@@ -25,9 +25,13 @@ function send(Time){
         alert("很抱歉　傳送逾時\n請重傳一次");
         freq++;
     },10000);
+    if(freq ==4){
+        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找翁華駿吧...");
+        location.href="https://cyshdormitory.github.io/";
+    }
     var Name = name.join(",");
     Time %= 10;
-    if(Time>5||(Time<=5 && freq%2==1)){
+    if((Time>5 && freq%2==0) ||(Time<=5 && freq%2==1)){
         $.ajax({
             type:'get',
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
@@ -42,7 +46,7 @@ function send(Time){
             }
         });
     }
-    else{
+    else if((Time<=5 && freq%2==0)||(Time>5 && freq%2==1)){
          $.ajax({
             type:'get',
             url: "https://script.google.com/macros/s/AKfycbyinMzrweJ1EDsVbPdw5mQyJJgeBBDY3O3HCtSroZkFjT2pLkk/exec",
