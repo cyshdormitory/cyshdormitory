@@ -21,7 +21,7 @@ function Confirm(){
 
 function send(Time){
     var freq = 0;
-    var count = setTimeout(function(){
+    setTimeout(function(){
         alert("很抱歉　傳送逾時\n請重傳一次");
         freq++;
     },10000);
