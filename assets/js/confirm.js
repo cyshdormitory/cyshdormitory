@@ -1,4 +1,5 @@
 function Confirm(){
+    document.getElementById("buttonArea").style.display="none";
     var date = new Date();
     var dd = date.getDay();
     var Time = date.getTime();
@@ -23,6 +24,7 @@ function send(Time){
     var freq = 0;
     setTimeout(function(){
         alert("很抱歉　傳送逾時\n請重傳一次");
+        document.getElementById("buttonArea").style.display="block";
         freq++;
     },10000);
     if(freq ==4){
