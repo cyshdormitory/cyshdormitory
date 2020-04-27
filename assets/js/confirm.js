@@ -33,6 +33,7 @@ function send(Time){
     Time %= 10;
     if((Time>5 && freq%2==0) ||(Time<=5 && freq%2==1)){
         $.ajax({
+            async:false,
             type:'get',
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
             data:  {
@@ -48,6 +49,7 @@ function send(Time){
     }
     else if((Time<=5 && freq%2==0)||(Time>5 && freq%2==1)){
          $.ajax({
+            async:false,
             type:'get',
             url: "https://script.google.com/macros/s/AKfycbyinMzrweJ1EDsVbPdw5mQyJJgeBBDY3O3HCtSroZkFjT2pLkk/exec",
             data:  {
