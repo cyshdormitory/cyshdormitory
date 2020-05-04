@@ -6,7 +6,7 @@ function Confirm(){
     Time /= (1000*60);
     Time += 480;
     Time %= 1440;
-    var openTime = [(18*60+50),(22*60+20)];
+    var openTime = [(18*60+40),(22*60+20)];
     var closeTime = [(20*60),(23*60+30)];
     if(dd>=1 && dd<=5 && ((Time>=openTime[0] && Time<=closeTime[0])||(Time>=openTime[1] &&  Time<=closeTime[1]))){
         send(Time);
