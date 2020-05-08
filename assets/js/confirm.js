@@ -22,6 +22,7 @@ function Confirm(){
 
 function send(Time){
     var freq = 0;
+    $.ajaxSetup({ cache: false });
     setTimeout(function(){
         alert("很抱歉　傳送逾時\n請重傳一次");
         document.getElementById("buttonArea").style.display="block";
@@ -36,6 +37,7 @@ function send(Time){
     if((Time>5 && freq%2==0) ||(Time<=5 && freq%2==1)){
         $.ajax({
             type:'get',
+            cache: false,
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
             data:  {
                 'name' : Name
@@ -51,6 +53,7 @@ function send(Time){
     else if((Time<=5 && freq%2==0)||(Time>5 && freq%2==1)){
          $.ajax({
             type:'get',
+            cache: false,
             url: "https://script.google.com/macros/s/AKfycbyinMzrweJ1EDsVbPdw5mQyJJgeBBDY3O3HCtSroZkFjT2pLkk/exec",
             data:  {
                 'name' : Name
