@@ -27,7 +27,7 @@ function send(Time){
         alert("很抱歉　傳送逾時\n請重傳一次");
         document.getElementById("buttonArea").style.display="block";
         freq++;
-    },7000);
+    },8000);
     if(freq ==4){
         alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找翁華駿吧...");
         location.href="https://cyshdormitory.github.io/";
