@@ -4,7 +4,6 @@ var content;
     $.ajax({
         type:'get',
         cache: false,
-        async: false,
         url: "https://script.google.com/macros/s/AKfycbyAh4YpHL0elceMbi5wckScuGQpqZOlwL9sJgFv2_-WtKQW3g_B/exec",
         data:  {
             'trigger' : "hello"
@@ -15,6 +14,7 @@ var content;
                 content = content.split("/n");
                 content[0] = content[0].split(",");
                 content[1] = content[1].split(",");
+                alert("可開始登錄名單");
             }
     });
 function lattice(Room){
