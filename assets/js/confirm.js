@@ -23,7 +23,7 @@ function Confirm(){
 function send(Time){
     var freq = 0;
     $.ajaxSetup({ cache: false });
-    setTimeout(function(){
+    var timeoutID = setTimeout(function(){
         alert("很抱歉　傳送逾時\n請重傳一次");
         document.getElementById("buttonArea").style.display="block";
         freq++;
@@ -45,7 +45,16 @@ function send(Time){
             datatype:'json',
             success: function(respond){
                 if(respond=="成功"){
-                    location.href="https://cyshdormitory.github.io/";
+                    name.length=0;
+                    var obj= document.getElementsByTagName("div");
+                    document.check.name.value = "";
+                    clearTimeout(timeoutID);
+                    for(var j=0;j<obj.length;j++){
+                        if(obj[j].getAttribute("id")=="insert"){
+                            obj[j].parentNode.removeChild(obj[j]);
+                            j-=1;
+                        }
+                    }
                 }
             }
         });
@@ -61,7 +70,16 @@ function send(Time){
             datatype:'json',
             success: function(respond){
                 if(respond=="成功"){
-                    location.href="https://cyshdormitory.github.io/";
+                    name.length=0;
+                    var obj= document.getElementsByTagName("div");
+                    document.check.name.value = "";
+                    clearTimeout(timeoutID);
+                    for(var i=0;i<obj.length;i++){
+                        if(obj[i].getAttribute("id")=="insert"){
+                            obj[i].parentNode.removeChild(obj[i]);
+                            i-=1;
+                        }
+                    }
                 }
             }
         });
