@@ -38,7 +38,7 @@ function lattice(Room){
             var dc_input = document.createElement("input");
             dc_input.type = 'button';
             dc_input.onclick = person;
-            dc_input.value = cubeName.pop();
+            dc_input.value = cubeName.shift();
             insertDiv.appendChild(dc_input);
         }
     }
