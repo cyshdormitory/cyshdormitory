@@ -14,7 +14,7 @@ var content;
                 content = content.split("/n");
                 content[0] = content[0].split(",");
                 content[1] = content[1].split(",");
-                alert("可以開始登錄名單");
+                alert("可開始登錄名單");
             }
     });
 function lattice(Room){
@@ -32,6 +32,7 @@ function lattice(Room){
                 break;
             }
         }
+      
         if(find){
             $("section").after("<div id="+"insert"+" class="+"Room"+"></div>");
             document.getElementById("buttonArea").style.display="block";
@@ -41,7 +42,7 @@ function lattice(Room){
                 var dc_input = document.createElement("input");
                 dc_input.type = 'button';
                 dc_input.onclick = person;
-                dc_input.value = cubeName.pop();
+                dc_input.value = cubeName.shift();
                 insertDiv.appendChild(dc_input);
             }
         }
