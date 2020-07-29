@@ -55,6 +55,7 @@ function send(Time){
                             j-=1;
                         }
                     }
+                    alert("可開始登錄名單");
                 }
             }
         });
@@ -80,6 +81,7 @@ function send(Time){
                             i-=1;
                         }
                     }
+                    alert("可開始登錄名單");
                 }
             }
         });
