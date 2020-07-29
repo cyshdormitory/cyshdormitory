@@ -1,3 +1,4 @@
+var freq = 0;
 function Confirm(){
     document.getElementById("buttonArea").style.display="none";
     var date = new Date();
@@ -21,7 +22,6 @@ function Confirm(){
 }
 
 function send(Time){
-    var freq = 0;
     $.ajaxSetup({ cache: false });
     var timeoutID = setTimeout(function(){
         alert("很抱歉　傳送逾時\n請重傳一次");
