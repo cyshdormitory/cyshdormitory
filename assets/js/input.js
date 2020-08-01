@@ -33,15 +33,16 @@ function lattice(Room){
             }
         }
         if(find){
+            document.getElementById("buttonArea").style.display = "block";
             $("section").after("<div id="+"insert"+" class="+"Room"+"></div>");
-            document.getElementById("buttonArea").style.display="block";
             var insertDiv = document.getElementById("insert");
             insertDiv.innerHTML = "<header><h1>" + document.check.name.value + "寢人員名單</h1></header>";
             while(cubeName.length){
                 var dc_input = document.createElement("input");
                 dc_input.type = 'button';
+                dc_input.id = value;
                 dc_input.onclick = person;
-                dc_input.value = cubeName.pop();
+                dc_input.value = cubeName.shift();
                 insertDiv.appendChild(dc_input);
             }
         }

@@ -1,3 +1,4 @@
+var freq = 0;
 function Confirm(){
     document.getElementById("buttonArea").style.display="none";
     var date = new Date();
@@ -21,7 +22,6 @@ function Confirm(){
 }
 
 function send(Time){
-    var freq = 0;
     $.ajaxSetup({ cache: false });
     var timeoutID = setTimeout(function(){
         alert("很抱歉　傳送逾時\n請重傳一次");
@@ -29,8 +29,8 @@ function send(Time){
         freq++;
     },8000);
     if(freq ==4){
-        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找翁華駿吧...");
-        location.href="https://cyshdormitory.github.io/";
+        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找舍監執秘吧...\n註：按確認前先給舍監執秘看名單");
+        showList();
     }
     var Name = name.join(",");
     Time %= 10;
