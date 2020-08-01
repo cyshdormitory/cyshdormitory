@@ -29,7 +29,7 @@ function send(Time){
         freq++;
     },8000);
     if(freq ==4){
-        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找舍監執秘吧...\n註：按確認前先給舍監執秘看名單");
+        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找舍監執秘吧...\n按下確認後會出現名單\n註：記得給舍監執秘看名單");
         showList();
     }
     var Name = name.join(",");
@@ -45,6 +45,7 @@ function send(Time){
             datatype:'json',
             success: function(respond){
                 if(respond=="成功"){
+                    freq =0;
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
                     document.check.name.value = "";
@@ -71,6 +72,7 @@ function send(Time){
             datatype:'json',
             success: function(respond){
                 if(respond=="成功"){
+                    freq =0;
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
                     document.check.name.value = "";
