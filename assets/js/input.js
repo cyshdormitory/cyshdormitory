@@ -14,7 +14,7 @@ var content;
                 content = content.split("/n");
                 content[0] = content[0].split(",");
                 content[1] = content[1].split(",");
-                alert("可以開始登錄名單");
+                alert("可開始登錄名單");
             }
     });
 function lattice(Room){
@@ -32,6 +32,7 @@ function lattice(Room){
                 break;
             }
         }
+      
         if(find){
             document.getElementById("buttonArea").style.display = "block";
             $("section").after("<div id="+"insert"+" class="+"Room"+"></div>");
