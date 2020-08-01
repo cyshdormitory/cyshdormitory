@@ -1,10 +1,5 @@
 const name = [];
 const id = [];
-var span = document.getElementById("close");
-var modal = document.getElementById('showList');
-span.onclick = function(){
-    modal.style.display = "none";
-}
 
 function showList(){
     document.getElementById("showList").style.display = "block";
