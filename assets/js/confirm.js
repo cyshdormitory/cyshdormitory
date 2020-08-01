@@ -29,8 +29,8 @@ function send(Time){
         freq++;
     },8000);
     if(freq ==4){
-        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找翁華駿吧...");
-        location.href="https://cyshdormitory.github.io/";
+        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找舍監執秘吧...\n註：按確認前先給舍監執秘看名單");
+        showList();
     }
     var Name = name.join(",");
     Time %= 10;

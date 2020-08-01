@@ -1,5 +1,18 @@
 const name = [];
 const id = [];
+var span = document.getElementById("close");
+var modal = document.getElementById('showList');
+span.onclick = function(){
+    modal.style.display = "none";
+}
+
+function showList(){
+    document.getElementById("showList").style.display = "block";
+    var insertTxt = document.getElementById("list");
+    while(name.length){
+        $(".listH1").after("<p id=" + "list>" + id.pop() + "&emsp;" + name.pop() + "</p>");
+    }
+ }
 
 function person(){
     if(name.length<12 || this.style.backgroundColor == "rgb(100, 149, 237)"){
@@ -15,8 +28,7 @@ function person(){
         
             var IndexName = name.indexOf(this.value);
             name.splice(IndexName,1);
-            var IndexId = id.indexOf(this.value);
-            id.splice(IndexId,1);
+            id.splice(IndexName,1);
         }
     }
 }
