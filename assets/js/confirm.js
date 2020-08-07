@@ -1,4 +1,6 @@
 var freq = 0;
+var limitTime = 8000;
+
 function Confirm(){
     document.getElementById("buttonArea").style.display="none";
     var date = new Date();
@@ -23,13 +25,8 @@ function Confirm(){
 
 function send(Time){
     $.ajaxSetup({ cache: false });
-    var timeoutID = setTimeout(function(){
-        alert("很抱歉　傳送逾時\n請重傳一次");
-        document.getElementById("buttonArea").style.display="block";
-        freq++;
-    },8000);
     if(freq ==4){
-        alert("額...Sorry...\n現在伺服器有問題\n把名字記下來去找舍監執秘吧...\n按下確認後會出現名單\n註：記得給舍監執秘看名單");
+        alert("額...Sorry...\n現在伺服器有問題\n按下確認後會出現名單\n註：記得給舍監執秘看名單");
         showList();
     }
     var Name = name.join(",");
@@ -38,6 +35,7 @@ function send(Time){
         $.ajax({
             type:'get',
             cache: false,
+            timeout: limitTime,
             url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
             data:  {
                 'name' : Name
@@ -49,7 +47,6 @@ function send(Time){
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
                     document.check.name.value = "";
-                    clearTimeout(timeoutID);
                     for(var j=0;j<obj.length;j++){
                         if(obj[j].getAttribute("id")=="insert"){
                             obj[j].parentNode.removeChild(obj[j]);
@@ -58,6 +55,11 @@ function send(Time){
                     }
                     alert("可開始登錄名單");
                 }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                alert("很抱歉　傳送逾時\n請重傳一次");
+                document.getElementById("buttonArea").style.display="block";
+                freq++;
             }
         });
     }
@@ -65,7 +67,8 @@ function send(Time){
          $.ajax({
             type:'get',
             cache: false,
-            url: "https://script.google.com/macros/s/AKfycbyinMzrweJ1EDsVbPdw5mQyJJgeBBDY3O3HCtSroZkFjT2pLkk/exec",
+            timeout: limitTime,
+            url: "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec",
             data:  {
                 'name' : Name
             },
@@ -76,15 +79,19 @@ function send(Time){
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
                     document.check.name.value = "";
-                    clearTimeout(timeoutID);
-                    for(var i=0;i<obj.length;i++){
-                        if(obj[i].getAttribute("id")=="insert"){
-                            obj[i].parentNode.removeChild(obj[i]);
-                            i-=1;
+                    for(var j=0;j<obj.length;j++){
+                        if(obj[j].getAttribute("id")=="insert"){
+                            obj[j].parentNode.removeChild(obj[j]);
+                            j-=1;
                         }
                     }
                     alert("可開始登錄名單");
                 }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                alert("很抱歉　傳送逾時\n請重傳一次");
+                document.getElementById("buttonArea").style.display="block";
+                freq++;
             }
         });
     }
