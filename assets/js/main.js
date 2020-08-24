@@ -1,5 +1,6 @@
 const name = [];
 const id = [];
+document.getElementById("name").value="";
 
 function showList(){
     document.getElementById("showList").style.display = "block";
