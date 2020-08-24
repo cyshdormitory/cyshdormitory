@@ -17,15 +17,15 @@ var content;
                 alert("可開始登錄名單");
             }
     });
-function lattice(Room){
+function lattice(){
     var value = document.check.name.value;
     var find = false;
     if(value !== ""){
         for(var i=0;i<content[0].length;i++){
-            if(content[0][i] == document.check.name.value){
+            if(content[0][i] == value){
                 var j=i;
                 find = true;
-                while(content[0][j] == document.check.name.value){
+                while(content[0][j] == value){
                     cubeName.push(content[1][j]);
                     j++;
                 }
@@ -37,7 +37,7 @@ function lattice(Room){
             document.getElementById("buttonArea").style.display = "block";
             $("section").after("<div id="+"insert"+" class="+"Room"+"></div>");
             var insertDiv = document.getElementById("insert");
-            insertDiv.innerHTML = "<header><h1>" + document.check.name.value + "寢人員名單</h1></header>";
+            insertDiv.innerHTML = "<header><h1>" + value + "寢人員名單</h1></header>";
             while(cubeName.length){
                 var dc_input = document.createElement("input");
                 dc_input.type = 'button';
