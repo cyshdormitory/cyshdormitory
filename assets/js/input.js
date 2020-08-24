@@ -1,5 +1,6 @@
 var cubeName = [];
 var content;
+var input = document.getElementById("name");
     $.ajaxSetup({ cache: false });
     $.ajax({
         type:'get',
@@ -17,6 +18,14 @@ var content;
                 alert("可開始登錄名單");
             }
     });
+
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        lattice();
+    }
+});
+
 function lattice(){
     var value = document.check.name.value;
     var find = false;
