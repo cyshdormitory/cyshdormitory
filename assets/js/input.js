@@ -3,7 +3,6 @@ var content;
 
 document.getElementById("name").onkeypress = function(event){
                 if (event.keyCode == 13 || event.which == 13){
-                    document.getElementById("name").blur();
                     lattice();
                 }
             };
@@ -27,6 +26,7 @@ document.getElementById("name").onkeypress = function(event){
     });
 
 function lattice(){
+    document.getElementById("name").blur();
     var value = document.getElementById("name").value;
     var find = false;
     if(value !== ""){
