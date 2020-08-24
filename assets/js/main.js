@@ -9,6 +9,12 @@ function showList(){
     }
  }
 
+function enterPress(){
+    if(event.keyCode==13){
+        lattice();
+    }
+}
+
 function person(){
     if(name.length<12 || this.style.backgroundColor == "rgb(100, 149, 237)"){
         if((this.style.backgroundColor == "")||
