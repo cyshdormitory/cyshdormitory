@@ -35,7 +35,7 @@ function send(Time){
                     freq =0;
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
-                    document.check.name.value = "";
+                    document.getElementById("name").value = "";
                     for(var j=0;j<obj.length;j++){
                         if(obj[j].getAttribute("id")=="insert"){
                             obj[j].parentNode.removeChild(obj[j]);
@@ -67,7 +67,7 @@ function send(Time){
                     freq =0;
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
-                    document.check.name.value = "";
+                    document.getElementById("name").value = "";
                     for(var j=0;j<obj.length;j++){
                         if(obj[j].getAttribute("id")=="insert"){
                             obj[j].parentNode.removeChild(obj[j]);

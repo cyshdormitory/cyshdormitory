@@ -35,7 +35,6 @@ function lattice(){
                 var j=i;
                 find = true;
                 while(content[0][j] == value){
-                    content[0][j]= null;
                     cubeName.push(content[1][j]);
                     j++;
                 }
