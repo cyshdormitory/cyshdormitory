@@ -12,7 +12,6 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload" onkeydown="enterPress()">
-
                <div id="showList" class="showList">
                                 <!-- Modal content -->
                                 <div class="modal-content">
@@ -32,7 +31,7 @@
 							<h1><strong>陽明學苑</strong><br>已量測體溫人員記錄</h1>
 						</header>
 						<hr />
-						<input type="text" name="room" id="name" placeholder="請輸入寢室號碼"  onchange="lattice(this)"/>
+						<input type="text" name="room" id="name" placeholder="請輸入寢室號碼"/ onchange="lattice()">
                             <!--
 						<form method="post" name="check">
 							<div class="fields">
@@ -60,9 +59,9 @@
 									<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
 									<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
 								</div>
-                        -->
 							</div>
 						</form>
+                        -->
 					</section>
                 <div class="buttonArea" id="buttonArea">
                     <button  class="confirm" onClick="Confirm()">確認</button>
