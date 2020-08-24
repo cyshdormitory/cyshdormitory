@@ -1,6 +1,5 @@
 var cubeName = [];
 var content;
-var input = document.getElementById("name");
     $.ajaxSetup({ cache: false });
     $.ajax({
         type:'get',
@@ -19,12 +18,11 @@ var input = document.getElementById("name");
             }
     });
 
-input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        lattice();
-    }
-});
+document.getElementById("name").onkeypress = function(event){
+                if (event.keyCode == 13 || event.which == 13){
+                    lattice();
+                }
+            };
 
 function lattice(){
     var value = document.check.name.value;
