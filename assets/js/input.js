@@ -1,5 +1,12 @@
 var cubeName = [];
 var content;
+
+document.getElementById("name").onkeypress = function(event){
+                if (event.keyCode == 13 || event.which == 13){
+                    lattice();
+                }
+            };
+
     $.ajaxSetup({ cache: false });
     $.ajax({
         type:'get',
@@ -18,14 +25,8 @@ var content;
             }
     });
 
-document.getElementById("name").onkeypress = function(event){
-                if (event.keyCode == 13 || event.which == 13){
-                    lattice();
-                }
-            };
-
 function lattice(){
-    var value = document.check.name.value;
+    var value = document.getElementById("name").value;
     var find = false;
     if(value !== ""){
         for(var i=0;i<content[0].length;i++){
@@ -33,6 +34,7 @@ function lattice(){
                 var j=i;
                 find = true;
                 while(content[0][j] == value){
+                    content[0][j]= null;
                     cubeName.push(content[1][j]);
                     j++;
                 }
@@ -41,6 +43,7 @@ function lattice(){
         }
       
         if(find){
+            find=false;
             document.getElementById("buttonArea").style.display = "block";
             $("section").after("<div id="+"insert"+" class="+"Room"+"></div>");
             var insertDiv = document.getElementById("insert");
