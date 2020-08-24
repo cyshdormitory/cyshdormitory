@@ -35,13 +35,14 @@ function send(Time){
                     freq =0;
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
-                    document.check.name.value = "";
+                    document.getElementById("name").value = "";
                     for(var j=0;j<obj.length;j++){
                         if(obj[j].getAttribute("id")=="insert"){
                             obj[j].parentNode.removeChild(obj[j]);
                             j-=1;
                         }
                     }
+                    alert("可開始登錄名單");
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -66,13 +67,14 @@ function send(Time){
                     freq =0;
                     name.length=0;
                     var obj= document.getElementsByTagName("div");
-                    document.check.name.value = "";
+                    document.getElementById("name").value = "";
                     for(var j=0;j<obj.length;j++){
                         if(obj[j].getAttribute("id")=="insert"){
                             obj[j].parentNode.removeChild(obj[j]);
                             j-=1;
                         }
                     }
+                    alert("可開始登錄名單");
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
