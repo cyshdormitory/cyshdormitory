@@ -4,30 +4,29 @@ var content;
 
 document.getElementById("name").onkeypress = function(event){
                 if (event.keyCode == 13 || event.which == 13){
-                    lattice();
+                    document.getElementById("name").blur();
                 }
             };
 
-    $.ajaxSetup({ cache: false });
-    $.ajax({
-        type:'get',
-        cache: false,
-        url: "https://script.google.com/macros/s/AKfycbyAh4YpHL0elceMbi5wckScuGQpqZOlwL9sJgFv2_-WtKQW3g_B/exec",
-        data:  {
-            'trigger' : "hello"
-        },
-        datatype:'json',
-        success: function(respond){
-                content = respond;
-                content = content.split("/n");
-                content[0] = content[0].split(",");
-                content[1] = content[1].split(",");
-                alert("可開始登錄名單");
-            }
-    });
+$.ajaxSetup({ cache: false });
+$.ajax({
+    type:'get',
+    cache: false,
+    url: "https://script.google.com/macros/s/AKfycbyAh4YpHL0elceMbi5wckScuGQpqZOlwL9sJgFv2_-WtKQW3g_B/exec",
+    data:  {
+        'trigger' : "hello"
+    },
+    datatype:'json',
+    success: function(respond){
+            content = respond;
+            content = content.split("/n");
+            content[0] = content[0].split(",");
+            content[1] = content[1].split(",");
+            alert("可開始登錄名單");
+        }
+});
 
 function lattice(){
-    document.getElementById("name").blur();
     var value = document.getElementById("name").value;
     var extinct= true;
     var find = false;
@@ -54,11 +53,9 @@ function lattice(){
       
             if(find){  //create a div
                 find=false;
-                var insert= "insert " + value;
                 document.getElementById("buttonArea").style.display = "block";
                 $("section").after("<div id="+ "insert" +" class="+"Room"+"></div>");
                 var insertDiv = document.getElementById("insert");
-    console.log(value);
                 insertDiv.innerHTML = "<header><h1>" + value + "寢人員名單</h1></header>";
                 while(cubeName.length){
                     var dc_input = document.createElement("input");
