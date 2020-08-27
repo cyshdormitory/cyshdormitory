@@ -31,24 +31,10 @@ function send(Time){
             },
             datatype:'json',
             success: function(respond){
-                if(respond=="成功"){
-                    freq =0;
-                    name.length=0;
-                    var obj= document.getElementsByTagName("div");
-                    document.getElementById("name").value = "";
-                    for(var j=0;j<obj.length;j++){
-                        if(obj[j].getAttribute("id")=="insert"){
-                            obj[j].parentNode.removeChild(obj[j]);
-                            j-=1;
-                        }
-                    }
-                    alert("可開始登錄名單");
-                }
+                sendSuccess(respond);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
-                alert("很抱歉　傳送逾時\n請重傳一次");
-                document.getElementById("buttonArea").style.display="block";
-                freq++;
+                sendError(XMLHttpRequest, textStatus, errorThrown);
             }
         });
     }
@@ -63,25 +49,34 @@ function send(Time){
             },
             datatype:'json',
             success: function(respond){
-                if(respond=="成功"){
-                    freq =0;
-                    name.length=0;
-                    var obj= document.getElementsByTagName("div");
-                    document.getElementById("name").value = "";
-                    for(var j=0;j<obj.length;j++){
-                        if(obj[j].getAttribute("id")=="insert"){
-                            obj[j].parentNode.removeChild(obj[j]);
-                            j-=1;
-                        }
-                    }
-                    alert("可開始登錄名單");
-                }
+                sendSuccess(respond);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
-                alert("很抱歉　傳送逾時\n請重傳一次");
-                document.getElementById("buttonArea").style.display="block";
-                freq++;
+                sendError(XMLHttpRequest, textStatus, errorThrown);
             }
         });
     }
+}
+
+function sendSuccess(message){
+    if(message=="成功"){
+        freq =0;
+        name.length=0;
+        element= new Array(0);
+        var obj= document.getElementsByTagName("div");
+        document.getElementById("name").value = "";
+        for(var j=0;j<obj.length;j++){
+            if(obj[j].getAttribute("id")=="insert"){
+                obj[j].parentNode.removeChild(obj[j]);
+                j-=1;
+            }
+        }
+        alert("可開始登錄名單");
+    }
+}
+
+function sendError(request, status, thrown){
+    alert("很抱歉　傳送逾時\n請重傳一次");
+    document.getElementById("buttonArea").style.display="block";
+    freq++;
 }
