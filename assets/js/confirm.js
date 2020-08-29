@@ -57,15 +57,7 @@ function Ajax(index, Name){
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
-                if(XMLHttpRequest.status==408){
                     timeOutError();
-                }
-                else{
-                    var errorMessage= "未知錯誤\n錯誤代碼：" + XMLHttpRequest.status;
-                    alert(errorMessage);
-                    alert("系統將繼續重試");
-                    Confirm();
-                }
             }
         });
 }
