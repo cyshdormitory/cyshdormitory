@@ -9,10 +9,10 @@ function Confirm(){
     Time /= (1000*60);
     Time += 480;
     Time %= 1440;
-    send(Time);
+    Send(Time);
 }
 
-function send(Time){
+function Send(Time){
     $.ajaxSetup({ cache: false });
     var signal;
     if(freq ==4){
