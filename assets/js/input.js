@@ -4,6 +4,7 @@ var content;
 
 document.getElementById("name").onkeypress = function(event){
                 if (event.keyCode == 13 || event.which == 13){
+                    lattice();
                     document.getElementById("name").blur();
                 }
             };
