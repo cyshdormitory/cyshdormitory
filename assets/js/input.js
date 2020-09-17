@@ -10,7 +10,6 @@ document.getElementById("name").onkeypress = function(event){
                 }
             };
 
-$.ajaxSetup({ cache: false });
 $.ajax({
     type:'get',
     cache: false,
