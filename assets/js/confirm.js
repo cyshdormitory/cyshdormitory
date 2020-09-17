@@ -13,7 +13,6 @@ function Confirm(){
 }
 
 function send(Time){
-    $.ajaxSetup({ cache: false });
     var signal;
     if(freq ==4){
         alert("額...Sorry...\n現在伺服器有問題\n按下確認後會出現名單\n註：記得給舍監執秘看名單");
