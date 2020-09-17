@@ -1,6 +1,7 @@
 var cubeName = [];
 var element= new Array(0);
 var content;
+$.ajaxSetup({ cache: false });
 
 document.getElementById("name").onkeypress = function(event){
                 if (event.keyCode == 13 || event.which == 13){
