@@ -1,36 +1,40 @@
 const name = [];
 const id = [];
 document.getElementById("name").value="";
-var input= prompt("請輸入密碼：");
 var loginTime=3;
 $.ajaxSetup({ cache: false });
+login();
 
-$.ajax({
-    type:'get',
-    cache: false,
-    url: "https://script.google.com/macros/s/AKfycbyihTE9D6oz5En9KSU6QKnDLs81IHwA3UagzfUr8Jo7c-vCbjSs/exec",
-    data:  {
-        'trigger' : input
-    },
-    datatype:'json',
-    success: function(respond){
-            if(respond!="fail"){
-                content = respond;
-                content = content.split("/n");
-                content[0] = content[0].split(",");
-                content[1] = content[1].split(",");
-                alert("可開始登錄名單");
+function login(){
+    var input= prompt("請輸入密碼：");
+    $.ajax({
+        type:'get',
+        cache: false,
+        url: "https://script.google.com/macros/s/AKfycbyihTE9D6oz5En9KSU6QKnDLs81IHwA3UagzfUr8Jo7c-vCbjSs/exec",
+        data:  {
+            'trigger' : input
+        },
+        datatype:'json',
+        success: function(respond){
+                if(respond!="fail"){
+                    content = respond;
+                    content = content.split("/n");
+                    content[0] = content[0].split(",");
+                    content[1] = content[1].split(",");
+                    alert("可開始登錄名單");
+                }
+                else if(loginTime){
+                    var msg= "密碼輸入錯誤\n您還剩下" + loginTime-- + "次機會";
+                    alert(msg);
+                    login();
+                }
+                else{
+                    alert("很抱歉，您輸入錯誤太多次");
+                    location.href= "https://www.cysh.cy.edu.tw/";
+                }
             }
-            else if(loginTime){
-                var msg= "密碼輸入錯誤\n您還剩下" + loginTime-- + "次機會";
-                alert(msg);
-            }
-            else{
-                alert("很抱歉，您輸入錯誤太多次");
-                location.href= "https://www.cysh.cy.edu.tw/";
-            }
-        }
-});
+    });
+}
 
 function showList(){
     document.getElementById("showList").style.display = "block";
