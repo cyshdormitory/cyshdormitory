@@ -1,12 +1,30 @@
 var cubeName = [];
 var element= new Array(0);
 var content;
+$.ajaxSetup({ cache: false });
 
 document.getElementById("name").onkeypress = function(event){
                 if (event.keyCode == 13 || event.which == 13){
                     document.getElementById("name").blur();
                 }
             };
+
+$.ajax({
+    type:'get',
+    cache: false,
+    url: "https://script.google.com/macros/s/AKfycbyAh4YpHL0elceMbi5wckScuGQpqZOlwL9sJgFv2_-WtKQW3g_B/exec",
+    data:  {
+        'trigger' : "hello"
+    },
+    datatype:'json',
+    success: function(respond){
+            content = respond;
+            content = content.split("/n");
+            content[0] = content[0].split(",");
+            content[1] = content[1].split(",");
+            alert("可開始登錄名單");
+        }
+});
 
 function lattice(){
     var value = document.getElementById("name").value;

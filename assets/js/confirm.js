@@ -1,5 +1,5 @@
 var freq = 0;
-var Url= ["https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec", "https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec"];
+var Url= ["https://script.google.com/macros/s/AKfycbwkiFsWuoc6Kk6h67sxFR3kmykn_Y-gQE2QMf-zsszKtorSbrrw/exec", "https://script.google.com/macros/s/AKfycbyinMzrweJ1EDsVbPdw5mQyJJgeBBDY3O3HCtSroZkFjT2pLkk/exec"];
 
 function Confirm(){
     document.getElementById("buttonArea").style.display="none";
@@ -12,8 +12,8 @@ function Confirm(){
     Send(Time);
 }
 
-function Send(Time){
-    $.ajaxSetup({ cache: false });
+function send(Time){
+    var signal;
     if(freq ==4){
         alert("額...Sorry...\n現在伺服器有問題\n按下確認後會出現名單\n註：記得給舍監執秘看名單");
         showList();
