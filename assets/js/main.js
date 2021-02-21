@@ -7,10 +7,11 @@ login();
 
 function login(){
     var input= prompt("請輸入密碼：");
+    var Url=["https://script.google.com/macros/s/AKfycbzXFVGqD0egrqAgskJSctk32M71tqBgV8kXPO4CWuok6RiiiORUvTB3eQ/exec", "https://script.google.com/macros/s/AKfycbyihTE9D6oz5En9KSU6QKnDLs81IHwA3UagzfUr8Jo7c-vCbjSs/exec"]
     $.ajax({
         type:'get',
         cache: false,
-        url: "https://script.google.com/macros/s/AKfycbyihTE9D6oz5En9KSU6QKnDLs81IHwA3UagzfUr8Jo7c-vCbjSs/exec",
+        url: Url[loginTime%2],
         data:  {
             'trigger' : input
         },
