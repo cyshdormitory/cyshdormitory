@@ -9,12 +9,11 @@ function Confirm(){
     Time /= (1000*60);
     Time += 480;
     Time %= 1440;
-    send(Time);
+    Send(Time);
 }
 
-function send(Time){
+function Send(Time){
     $.ajaxSetup({ cache: false });
-    var signal;
     if(freq ==4){
         alert("額...Sorry...\n現在伺服器有問題\n按下確認後會出現名單\n註：記得給舍監執秘看名單");
         showList();
@@ -22,12 +21,11 @@ function send(Time){
     var Name = name.join(",");
     Time %= 10;
     if((Time>5 && freq%2==0) ||(Time<=5 && freq%2==1)){
-        signal=0;
+        Ajax(0, Name);
     }
     else if((Time<=5 && freq%2==0)||(Time>5 && freq%2==1)){
-        signal=1;
+        Ajax(1, Name);
     }
-    Ajax(signal, Name);
 }
 
 function Ajax(index, Name){
@@ -57,21 +55,13 @@ function Ajax(index, Name){
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
-                if(XMLHttpRequest.status==408){
                     timeOutError();
-                }
-                else{
-                    var errorMessage= "未知錯誤\n錯誤代碼：" + XMLHttpRequest.status;
-                    alert(errorMessage);
-                    alert("系統將繼續重試");
-                    Confirm();
-                }
             }
         });
 }
 
 function timeOutError(){
-    alert("很抱歉　傳送逾時\n系統將自動重新傳送資料");
+    alert("很抱歉　傳送逾時\n按下確認後，系統將自動重新傳送資料");
     freq++;
     Confirm();
 }
