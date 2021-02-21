@@ -9,23 +9,6 @@ document.getElementById("name").onkeypress = function(event){
                 }
             };
 
-$.ajax({
-    type:'get',
-    cache: false,
-    url: "https://script.google.com/macros/s/AKfycbyAh4YpHL0elceMbi5wckScuGQpqZOlwL9sJgFv2_-WtKQW3g_B/exec",
-    data:  {
-        'trigger' : "hello"
-    },
-    datatype:'json',
-    success: function(respond){
-            content = respond;
-            content = content.split("/n");
-            content[0] = content[0].split(",");
-            content[1] = content[1].split(",");
-            alert("可開始登錄名單");
-        }
-});
-
 function lattice(){
     var value = document.getElementById("name").value;
     var extinct= true;
