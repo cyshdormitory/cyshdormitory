@@ -9,7 +9,7 @@ function Confirm(){
     Time /= (1000*60);
     Time += 480;
     Time %= 1440;
-    send(Time);
+    Send(Time);
 }
 
 function send(Time){
@@ -21,12 +21,11 @@ function send(Time){
     var Name = name.join(",");
     Time %= 10;
     if((Time>5 && freq%2==0) ||(Time<=5 && freq%2==1)){
-        signal=0;
+        Ajax(0, Name);
     }
     else if((Time<=5 && freq%2==0)||(Time>5 && freq%2==1)){
-        signal=1;
+        Ajax(1, Name);
     }
-    Ajax(signal, Name);
 }
 
 function Ajax(index, Name){
@@ -62,7 +61,7 @@ function Ajax(index, Name){
 }
 
 function timeOutError(){
-    alert("很抱歉　傳送逾時\n系統將自動重新傳送資料");
+    alert("很抱歉　傳送逾時\n按下確認後，系統將自動重新傳送資料");
     freq++;
     Confirm();
 }
