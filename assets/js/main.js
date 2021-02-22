@@ -36,7 +36,7 @@ function login(){
                         alert("很抱歉，您輸入錯誤太多次");
                         location.href= "https://www.cysh.cy.edu.tw/";
                     }
-                }
+                },
             error: function(){
                 loginFail++;
                 login();
