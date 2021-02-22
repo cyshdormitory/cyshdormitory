@@ -3,6 +3,7 @@ const id = [];
 document.getElementById("name").value="";
 var loginTime=3;
 $.ajaxSetup({ cache: false });
+var loginFail= 0;
 login();
 
 function login(){
@@ -12,7 +13,8 @@ function login(){
         $.ajax({
             type:'get',
             cache: false,
-            url: Url[loginTime%2],
+            url: Url[loginFail%2],
+            timeout: 5000,
             data:  {
                 'trigger' : input
             },
@@ -35,6 +37,10 @@ function login(){
                         location.href= "https://www.cysh.cy.edu.tw/";
                     }
                 }
+            error: function(){
+                loginFail++;
+                login();
+            }
         });
     }
     else{
