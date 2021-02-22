@@ -4,10 +4,10 @@ document.getElementById("name").value="";
 var loginTime=3;
 $.ajaxSetup({ cache: false });
 var loginFail= 0;
+var input= prompt("請輸入密碼：");
 login();
 
 function login(){
-    var input= prompt("請輸入密碼：");
     var Url=["https://script.google.com/macros/s/AKfycbzXFVGqD0egrqAgskJSctk32M71tqBgV8kXPO4CWuok6RiiiORUvTB3eQ/exec", "https://script.google.com/macros/s/AKfycbyihTE9D6oz5En9KSU6QKnDLs81IHwA3UagzfUr8Jo7c-vCbjSs/exec"]
     if(input!=null){
         $.ajax({
