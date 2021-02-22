@@ -8,33 +8,39 @@ login();
 function login(){
     var input= prompt("請輸入密碼：");
     var Url=["https://script.google.com/macros/s/AKfycbzXFVGqD0egrqAgskJSctk32M71tqBgV8kXPO4CWuok6RiiiORUvTB3eQ/exec", "https://script.google.com/macros/s/AKfycbyihTE9D6oz5En9KSU6QKnDLs81IHwA3UagzfUr8Jo7c-vCbjSs/exec"]
-    $.ajax({
-        type:'get',
-        cache: false,
-        url: Url[loginTime%2],
-        data:  {
-            'trigger' : input
-        },
-        datatype:'json',
-        success: function(respond){
-                if(respond!="fail"){
-                    content = respond;
-                    content = content.split("/n");
-                    content[0] = content[0].split(",");
-                    content[1] = content[1].split(",");
-                    alert("可開始登錄名單");
+    if(input!=null){
+        $.ajax({
+            type:'get',
+            cache: false,
+            url: Url[loginTime%2],
+            data:  {
+                'trigger' : input
+            },
+            datatype:'json',
+            success: function(respond){
+                    if(respond!="fail"){
+                        content = respond;
+                        content = content.split("/n");
+                        content[0] = content[0].split(",");
+                        content[1] = content[1].split(",");
+                        alert("可開始登錄名單");
+                    }
+                    else if(loginTime){
+                        var msg= "密碼輸入錯誤\n您還剩下" + --loginTime + "次機會";
+                        alert(msg);
+                        login();
+                    }
+                    else{
+                        alert("很抱歉，您輸入錯誤太多次");
+                        location.href= "https://www.cysh.cy.edu.tw/";
+                    }
                 }
-                else if(loginTime){
-                    var msg= "密碼輸入錯誤\n您還剩下" + --loginTime + "次機會";
-                    alert(msg);
-                    login();
-                }
-                else{
-                    alert("很抱歉，您輸入錯誤太多次");
-                    location.href= "https://www.cysh.cy.edu.tw/";
-                }
-            }
-    });
+        });
+    }
+    else{
+        alert("需輸入密碼才能使用本系統");
+        login();
+    }
 }
 
 function showList(){
