@@ -25,7 +25,7 @@ function login(){
                     alert("可開始登錄名單");
                 }
                 else if(loginTime){
-                    var msg= "密碼輸入錯誤\n您還剩下" + loginTime-- + "次機會";
+                    var msg= "密碼輸入錯誤\n您還剩下" + --loginTime + "次機會";
                     alert(msg);
                     login();
                 }
