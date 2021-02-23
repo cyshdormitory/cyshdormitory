@@ -8,13 +8,13 @@ var input= prompt("請輸入密碼：");
 login();
 
 function login(){
-    var Url=["https://script.google.com/macros/s/AKfycbzXFVGqD0egrqAgskJSctk32M71tqBgV8kXPO4CWuok6RiiiORUvTB3eQ/exec", "https://script.google.com/macros/s/AKfycbyihTE9D6oz5En9KSU6QKnDLs81IHwA3UagzfUr8Jo7c-vCbjSs/exec"]
+    var Url=["https://script.google.com/macros/s/AKfycbzXFVGqD0egrqAgskJSctk32M71tqBgV8kXPO4CWuok6RiiiORUvTB3eQ/exec", "https://script.google.com/macros/s/AKfycbxHnAlOWBsa4ISeuyfCLhamFvm10uY01F-jDzEtdF9DJ9FtHDOS8XxPqw/exec"];
     if(input!=null){
         $.ajax({
             type:'get',
             cache: false,
             url: Url[loginFail%2],
-            timeout: 5000,
+            timeout: 8000,
             data:  {
                 'trigger' : input
             },
@@ -39,6 +39,7 @@ function login(){
                 },
             error: function(){
                 loginFail++;
+                alert("連線逾時，將自動重傳資料");
                 login();
             }
         });
