@@ -14,13 +14,13 @@ function Confirm(){
 
 function send(Time){
     var signal;
+    var Name = name.join(",");
+    Time %= 10;
     if(freq ==4){
         alert("額...Sorry...\n現在伺服器有問題\n按下確認後會出現名單\n註：記得給舍監執秘看名單");
         showList();
     }
-    var Name = name.join(",");
-    Time %= 10;
-    if((Time>5 && freq%2==0) ||(Time<=5 && freq%2==1)){
+    else if((Time>5 && freq%2==0) ||(Time<=5 && freq%2==1)){
         Ajax(0, Name);
     }
     else if((Time<=5 && freq%2==0)||(Time>5 && freq%2==1)){
